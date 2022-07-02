@@ -44,3 +44,19 @@ jobs:
         with:
           name: zipped-bundle
           path: ${{ github.sha }}.zip
+  
+  publish:
+   runs-on: ubuntu-latest
+   steps:
+    - name : create release 
+      uses: actions/create-realease@v1
+      env:
+        GITHUB_TOKEN: $ {{ secrets.githug_token }}
+      with:
+        tag_name: ${{ github.run_number }}
+        realease_name :  Release fron ${{ github.run_number }}
+        body: New Realese for $ {{ github.sha }}
+        draft: false
+        prerelease: false
+      
+  
