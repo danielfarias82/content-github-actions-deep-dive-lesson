@@ -56,7 +56,7 @@ jobs:
         GITHUB_TOKEN: $ {{ secrets.github_token }}
       with:
         tag_name: ${{ github.run_number }}
-        realease_name :  Release fron ${{ github.run_number }}
+        release_name :  Release fron ${{ github.run_number }}
         body: New Realese for $ {{ github.sha }}
         draft: false
         prerelease: false
