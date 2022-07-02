@@ -53,11 +53,11 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: $ {{ secrets.github_token }}
+        GITHUB_TOKEN: ${{ secrets.github_token }}
       with:
         tag_name: ${{ github.run_number }}
         release_name :  Release fron ${{ github.run_number }}
-        body: New Realese for $ {{ github.sha }}
+        body: New Realese for ${{ github.sha }}
         draft: false
         prerelease: false
       
